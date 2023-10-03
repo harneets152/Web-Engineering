@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 120%;
+    margin: 25px;
+    background-color: bisque;
+}
+
+main {
+    display:block;
+    height:175px;
+}
+
+h1 {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: #000000;
+}
+
+p {
+    max-width: 600px;
+}
+
+.textarea {
+    width: 45vw;
+    float: left;
+}
+
+.maparea {
+    height: 95vh;
+    width: 70vw;
+    float: right;
+}
+#map {
+    height: 100%;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+footer {
+    padding-top: 25px;
+    border-top: 1px solid black;
+}
+
+footer a {
+    float:left;
+    margin:5px;
+}
