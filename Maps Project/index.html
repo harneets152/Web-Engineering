@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Maps API -->
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIX6yRch0zter_vG4jw05z3Yok7ZMBRH4&callback=initMap"
+    type="text/javascript"></script>
+    <!-- script -->
+    <script src="script.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Map Quiz</title>
+</head>
+<body>
+    <section class="textarea">
+        <h1>CSUN Map Quiz</h1>
+        <p>Looking for something challenging? Well look no further you can test how well you know our Campus and see how many you can get right! The list shown below in order, will be the buildings you will be asked to identify, <b>double-click</b> on the map where you think the building or area is.</p>
+        <p><ol>
+            <li>Jacaranda Hall <span id="result1"></span></li>
+            <li>Bayramian Hall <span id="result2"></span></li>
+            <li>Library <span id="result3"></span></li>
+            <li>Campus Store Complex <span id="result4"></span></li>
+            <li>Police Services <span id="result5"></span></li>
+        </ol></p>
+        <div>
+            <h2>Correct answers: <span id="correctCount">0</span></h2>
+        </div>
+    </section>
+
+    <section class="maparea">
+        <div id="map"></div>
+    </section>
+    
+</body>
+</html>
