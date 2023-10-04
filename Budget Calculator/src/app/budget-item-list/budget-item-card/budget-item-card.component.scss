@@ -1,0 +1,113 @@
+@import '../../../main-styles.scss';
+
+.root {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    // has to be here or else will not work
+    &:hover {
+        .x-icon-button {
+            // applied when hover event on root
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .x-icon-button {
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        border-radius: 30%;
+        background: $dark;
+        background-image: url('../../../assets/delete_icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        right: -15px; // this has to be half of the width
+        top: -15px; // this has to be half of the height
+
+        // x button animation, ease-in was an option but we decided on ease-out
+        transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+        
+        transform: scale(0);
+
+        // So button does not appear at the start
+        opacity: 0;
+
+        // when we hover over, hand cursor used
+        cursor: pointer;
+
+        // when parent is hovered, x button icon, apply these styles
+        // zooms in
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.budget-item {
+    display: flex;
+    width: 100%;
+    background-color: $light-grey;
+    padding: 10px;
+    cursor: pointer;
+
+    // same timing and transition that we have for the xbutton icon
+    // to ease into change of color
+    transition: background-color 0.2s ease-out;
+
+    // changes background color a bit darker, by 2%, when hovered
+    &:hover {
+        background-color: darken($light-grey, 1%);
+    }
+
+    // .date {
+    //     padding: 5px;
+    //     border-radius: 3px;
+    // }
+
+    .description {
+        display: flex;
+        flex-grow: 1;
+        font-size: 18px;
+        margin-left: 5px;
+
+        // Vertically center the children elements
+        align-items: center;
+    }
+
+    .amount {
+        padding: 5px;
+        border-radius: 3px;
+    }
+}
+
+// .date {
+//     p {
+//         color: $green;
+//     }
+
+//     .amount {
+//         background-color: $light-green;
+//     }
+// }
+
+.expense {
+    p {
+        color: $red;
+    }
+
+    .amount {
+        background-color: $light-red;
+    }
+}
+
+.income {
+    p {
+        color: $green;
+    }
+
+    .amount {
+        background-color: $light-green;
+    }
+}
