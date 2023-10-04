@@ -1,0 +1,22 @@
+<!--Creates the website header bar-->
+<div class="top-bar">
+  <h1>Budget Calculator</h1>
+</div>
+
+<section class="total-budget-section">
+  <h2 [ngClass]="{ 'red': totalBudget < 0, 'green': totalBudget > 0 }">{{ totalBudget }}</h2>
+</section>
+
+<section class="add-item-section">
+  <!--Creates the add item form to take inputs from the user-->
+  <div class="add-item-container">
+    <!--app-add-item-form Links to add item functionality-->
+    <app-add-item-form (formSubmit)="addItem($event)"></app-add-item-form>
+  </div>
+</section>
+
+<!--Add spacing between additem and budgetlist-->
+<hr style="margin-top: 10">
+
+<!--Budget Item listing-->
+<app-budget-item-list [budgetItems]="budgetItems" (delete)="deleteItem($event)" (update)="updateItem($event)"></app-budget-item-list>
