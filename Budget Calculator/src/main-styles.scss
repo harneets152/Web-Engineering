@@ -1,0 +1,33 @@
+// defining the global styles and changing variables
+
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Lato:300,900');
+
+// Set your shadow colors
+$purple: rgb(0, 0, 0);
+//Color of input bar
+$light-grey: white;
+//Header Color
+$dark: rgb(255, 255, 255);
+
+//Color for increase money 
+$green: black;
+//Color box of value
+$light-green: lightgrey;
+//Color for decrease money
+$red: black;
+$light-red: lightgrey;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $purple;
+$link: $purple;
+
+// Update some of Bulma's component variables
+$body-background-color: white;
+$control-border-width: 2px;
+$input-border-color: solid black;
+$input-background-color: $light-grey;
+$input-shadow: none;
