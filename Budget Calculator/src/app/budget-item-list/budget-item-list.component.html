@@ -1,0 +1,52 @@
+<section class="budget-items-section">
+  <div class="budget-items-container">
+
+    <!-- <div class="date-columns">
+      <h1>Date</h1>
+
+      <div class="budget-items">
+        <div *ngFor="let item of budgetItems">
+          <app-budget-item-card
+          *ngIf="item.amount = ''" (This portion has to be tailored to a string so we can try to make it equal any string) 
+          [item]="item"
+            (xButtonClick)="onDeleteButtonClicked(item)"
+            (cardClick)="onCardClicked(item)"
+            style="display:block; margin-bottom: 20px"></app-budget-item-card>
+        </div>
+      </div>
+    </div> -->
+
+    <!--Earnings Column-->
+    <div class="income-column">
+      <h1>Earnings</h1>
+      <div class="budget-items">
+        <div *ngFor="let item of budgetItems">
+          <!--Will show if amount is above 0-->
+          <app-budget-item-card
+            *ngIf="item.amount >= 0"
+            [item]="item"
+            (xButtonClick)="onDeleteButtonClicked(item)"
+            (cardClick)="onCardClicked(item)"
+            style="display:block; margin-bottom: 10px"></app-budget-item-card>
+        </div>
+      </div>
+    </div>
+
+    <!--Loss Column-->
+    <div class="expenses-column">
+      <h1>Loss</h1>
+      <div class="budget-items">
+          <div *ngFor="let item of budgetItems">
+            <!--Will show if amount is below 0-->
+            <app-budget-item-card
+              *ngIf="item.amount < 0"
+              [item]="item"
+              (xButtonClick)="onDeleteButtonClicked(item)"
+              (cardClick)="onCardClicked(item)"
+              style="display:block; margin-bottom: 10px"></app-budget-item-card>
+          </div>
+        </div>
+    </div>
+    
+  </div>
+</section>
