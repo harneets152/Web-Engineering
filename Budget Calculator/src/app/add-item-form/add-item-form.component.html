@@ -1,0 +1,49 @@
+<!--template driven form converted to angular form when imported in out app.module.ts
+binded to the ngsubmit event
+on submit, pass the item formcreated in typescript file-->
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+  <!--is-horzontal is used from Bulma framework to lay buttones next to each other-->
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <!--Datesection for user adding items-->
+      <!-- <div class="field">
+        <p class="control">
+          <input type="text" required name="date" class="input" placeholder="Date" [ngModel]="item.date">
+        </p>
+      </div> -->
+       <!--Bulma class that is putting two items next to each other side by side-->
+       <div class="field is-narrow">
+
+        <!--should be for the date input-->
+        <!--control from Bulma framework-->
+        <!-- <p class="control"> -->
+          <!--Number allows integer input-->
+          <!--<input type="text" required name="date" style="width: 100px;" class="input" placeholder="Date" [ngModel]="item.date"> -->
+       <!-- </p> -->
+      <!-- </div> -->
+      <!-- <div class="field is-narrow"> --> 
+
+        <!--control from Bulma framework-->
+        <p class="control">
+          <!--Number allows integer input and also having required fufills validation for these fields-->
+          <input type="number" required name="amount" style="width: 100px;" class="input" placeholder="Amount" [ngModel]="item.amount">
+        </p>
+      </div>
+
+      <!--Description box that takes text input-->
+      <div class="field">
+        <p class="control">
+          <input type="text" required name="description" class="input" placeholder="Description" [ngModel]="item.description">
+        </p>
+      </div>
+
+      <!--Bulma class that is putting two items next to each other side by side-->
+        <!--Disabled checks if form is valid and changes color based on the field validation-->
+        <button type="submit" class="button" [ngClass]="{ 'is-primary': isNewItem, 'is-success': !isNewItem }" [disabled]="!itemForm.valid">
+          <p *ngIf="isNewItem">Add</p>
+          <p *ngIf="!isNewItem">Save</p>
+        </button>
+      
+    </div>
+  </div>
+</form>
